@@ -21,12 +21,35 @@ body {
 .github__container {
   width: 50%;
 }
+.github__container__autocomplete {
+  margin-top: 1rem;
+  max-height: 15rem;
+  border-radius: 0.3rem;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.github__container__autocomplete__result {
+  margin-bottom: 1rem;
+  display: flex;
+  background-color: #ffffff;
+  padding: 0.4rem 0.4rem;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.github__container__autocomplete__result:hover {
+  background-color: #e0dcdc;
+}
+.github__container__autocomplete__result__text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 .github__container__search {
   display: flex;
   background-color: #ffffff;
   border-radius: 0.3rem;
   padding: 1.8rem 1.2rem;
   justify-content: space-evenly;
+  flex-direction: column;
   gap: 0.5rem;
 }
 .github__container__search__input {
@@ -43,7 +66,7 @@ body {
   outline: none;
   border-color: #007bff;
 }
-.github__container__search__btn {
+.github__container__search__btn--search {
   min-width: 20%;
   padding: 0.25rem;
   min-height: 2.5rem;
@@ -56,7 +79,24 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.github__container__search__btn:hover {
+.github__container__search__btn--search:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.github__container__search__btn--less {
+  min-width: 20%;
+  padding: 0.25rem;
+  min-height: 2.5rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 0.09rem solid #007bff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.github__container__search__btn--less:hover {
   background-color: #007bff;
   color: #fff;
 }

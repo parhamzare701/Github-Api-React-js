@@ -5,7 +5,6 @@
     list-style: none;
     box-sizing: border-box;
   }
-  
   $color-blue: #007bff;
   $color-white: #ffffff;
   body{
@@ -23,13 +22,35 @@
   &__container {
     width: 50%;
   
-  
+    &__autocomplete{
+      margin-top:1rem;
+      max-height: 15rem;
+      border-radius: .3rem;
+      overflow-y: scroll;
+      background-color: rgba(0, 0, 0, .5);
+      &__result{
+        margin-bottom: 1rem;
+        display: flex;
+        background-color: $color-white;
+        padding: .4rem .4rem;
+        justify-content: space-evenly;
+        cursor: pointer;
+        &:hover{
+          background-color: #e0dcdc;
+        }
+        &__text{
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+    }
   &__search {
     display: flex;
     background-color: $color-white;
     border-radius: .3rem;
     padding: 1.8rem 1.2rem;
     justify-content: space-evenly;
+    flex-direction: column;
     gap: .5rem;
   
    &__input {
@@ -47,7 +68,25 @@
       border-color: $color-blue;
     }
    }
-  &__btn {
+  &__btn--search {
+    min-width: 20%;
+    padding: .25rem;
+    min-height: 2.5rem;
+    border-radius: .3rem;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: transparent;
+    border: .09rem solid $color-blue;
+    color: $color-blue;
+    cursor: pointer;
+    transition: all .3s;
+  
+    &:hover {
+      background-color: $color-blue;
+      color: #fff;
+    }
+  }
+  &__btn--less{
     min-width: 20%;
     padding: .25rem;
     min-height: 2.5rem;
@@ -252,6 +291,3 @@
       }
   }
 }
-
-// is the last update
-//hello world
