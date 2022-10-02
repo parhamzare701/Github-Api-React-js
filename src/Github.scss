@@ -68,25 +68,7 @@
       border-color: $color-blue;
     }
    }
-  &__btn--search {
-    min-width: 20%;
-    padding: .25rem;
-    min-height: 2.5rem;
-    border-radius: .3rem;
-    font-weight: 500;
-    font-size: 1rem;
-    background-color: transparent;
-    border: .09rem solid $color-blue;
-    color: $color-blue;
-    cursor: pointer;
-    transition: all .3s;
-  
-    &:hover {
-      background-color: $color-blue;
-      color: #fff;
-    }
-  }
-  &__btn--less{
+  &__btn {
     min-width: 20%;
     padding: .25rem;
     min-height: 2.5rem;

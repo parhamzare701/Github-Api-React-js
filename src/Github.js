@@ -13,27 +13,26 @@ const GitHub = () => {
   const [focused, setFocused] = useState(false);
   useEffect(() => {
     const getAutocomplete = async () => {
-        if (autocompleteItems.length === 0) {
-          const response = await fetch(
-            `https://api.github.com/users?per_page=30`
-          );
-          if (response.ok) {
-            const json = await response.json();
-            SetAutocompleteItems(json);
-            setLoading(false);
-          }
+      if (autocompleteItems.length === 0) {
+        const response = await fetch(
+          `https://api.github.com/users?per_page=30`
+        );
+        if (response.ok) {
+          const json = await response.json();
+          SetAutocompleteItems(json);
+          setLoading(false);
         }
+      }
     };
     getAutocomplete();
   });
   const getSearchResult = async () => {
-      const response = await fetch(
-        `https://api.github.com/users/${user}/repos`
-      );
-      if (response.ok) {
-        const json = await response.json();
-        setGithubData(json);
-      }
+    setFocused(false);
+    const response = await fetch(`https://api.github.com/users/${user}/repos`);
+    if (response.ok) {
+      const json = await response.json();
+      setGithubData(json);
+    }
   };
   if (!loading) {
     matches = autocompleteItems.filter((state) => {
@@ -55,24 +54,14 @@ const GitHub = () => {
                 onChange={(event) => {
                   setUser(event.target.value);
                 }}
-                onFocus={() => setFocused(true)}
+                onClick={() => setFocused(true)}
               />
               <button
-                className="github__container__search__btn--search"
+                className="github__container__search__btn"
                 onClick={getSearchResult}
               >
                 Search
               </button>
-              {focused && (
-                <button
-                  onClick={() => {
-                    setFocused(false);
-                  }}
-                  className="github__container__search__btn--less"
-                >
-                  Less
-                </button>
-              )}
             </section>
             <div className="github__container__autocomplete">
               {loading ? (
